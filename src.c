@@ -583,13 +583,12 @@ void lang_synchronize(void) {
 }
 
 void lang_activate(Lang lang) {
-    // Нужно дополнять этот код, если нужно три языка и более
     if (lang_current != lang) {
-        lang_synchronize();
-
-        if ((lang_current == 0 && lang == 1) || (lang_current == 1 && lang == 2) || (lang_current == 2 && lang == 0)) {
+        if ((lang_current == 0 && lang == 2) || (lang_current == 1 && lang == 0) || (lang_current == 2 && lang == 1)) {
             lang_synchronize();
         }
+
+        lang_synchronize();
     }
 
     lang_current = lang;
@@ -688,7 +687,6 @@ bool lang_shift_process_custom_keycodes(Key key, keyrecord_t *record) {
             return false;
         case LA_CHNG:
             if (down) {
-                // lang should be its now
                 if (lang_should_be == 0) {
                     lang_activate_from_user(1);
                     layer_on(2);
@@ -700,6 +698,34 @@ bool lang_shift_process_custom_keycodes(Key key, keyrecord_t *record) {
                     layer_off(4);
                     layer_off(2);
                 }
+            }
+            return false;
+        case TL_EN_RU:
+            if (down) {
+                lang_activate_from_user(1);
+                layer_on(2);
+            } else {
+                lang_activate_from_user(0);
+                layer_off(2);
+            }
+            return false;
+        case TL_RU_EN:
+            if (down) {
+                lang_activate_from_user(0);
+                layer_off(2);
+            } else {
+                lang_activate_from_user(1);
+                layer_on(2);
+            }
+            return false;
+        case TL_UA_EN:
+            if (down) {
+                lang_activate_from_user(0);
+                layer_off(4);
+                layer_off(2);
+            } else {
+                lang_activate_from_user(2);
+                layer_on(4);
             }
             return false;
         case LA_SYNC:

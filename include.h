@@ -213,8 +213,8 @@ enum lang_shift_keycodes {
 
     /* -------------------------------------------------------------------- */
     /* Украинские символы */
-    UA_GE,   /* ґ */
-    UA_S_GE, /* Ґ */
+    UA_GRV,  /* ` */
+    UA_TILD, /* ~ */
     UA_1,    /* 1 */
     UA_EXCL, /* ! */
     UA_2,    /* 2 */
@@ -287,8 +287,8 @@ enum lang_shift_keycodes {
     UA_S_ZH, /* Ж */
     UA_JE,   /* є */
     UA_S_JE, /* Є */
-    UA_BSLS, /* \ */
-    UA_SLSH, /* / */
+    UA_GE,   /* \ */
+    UA_S_GE, /* / */
 
     UA_JA,   /* я */
     UA_S_JA, /* Я */

@@ -331,8 +331,8 @@ Key lang_get_key(Key key) {
         return (key - EN_GRV) + KS_GRV;
     } else if (RU_JO <= key && key <= RU_COMM) {
         return (key - RU_JO) + KS_GRV;
-    } else if (UA_GE <= key && key <= UA_COMM) {
-        return (key - UA_GE) + KS_GRV;
+    } else if (UA_GRV <= key && key <= UA_COMM) {
+        return (key - UA_GRV) + KS_GRV;
     } else {
         return NONE_KEY;
     }
@@ -516,13 +516,13 @@ Key lang_calc_agnostic(Key key) {
             case AG_DQUO:
                 return UA_DQUO;
             case AG_BSLS:
-                return UA_BSLS;
+                return EN_BSLS;
             case AG_COMM:
                 return UA_COMM;
             case AG_DOT:
                 return UA_DOT;
             case AG_SLSH:
-                return UA_SLSH;
+                return EN_SLSH;
             case AG_QUES:
                 return UA_QUES;
             default:

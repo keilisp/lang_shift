@@ -287,8 +287,8 @@ enum lang_shift_keycodes {
     UA_S_ZH, /* Ж */
     UA_JE,   /* є */
     UA_S_JE, /* Є */
-    UA_GE,   /* \ */
-    UA_S_GE, /* / */
+    UA_GE,   /* ґ */
+    UA_S_GE, /* Ґ */
 
     UA_JA,   /* я */
     UA_S_JA, /* Я */
